@@ -1,0 +1,14 @@
+version: 0.2
+
+env:
+  # the registry username and password is stored in aws secret manager and they
+  # are setup so that the build2 role has access.
+  secrets-manager:
+    DOCKER_USER_NAME: "Docker_Reg_Secret:REGISTRY_USER"
+    DOCKER_PASSWORD: "Docker_Reg_Secret:REGISTRY_PASSWORD"
+phases:
+  build:
+    commands:
+      - docker build . -t git.systementor.se/242magnusson.philip/pyapp
+      - docker login -u $DOCKER_USER_NAME -p $DOCKER_PASSWORD https://git.systementor.se
+      - docker push git.systementor.se/242magnusson.philip/pyapp

@@ -1,0 +1,28 @@
+### Create customer
+POST http://localhost:5000/api/customer
+Content-Type: application/json
+
+{
+	"name": "Kalle",
+	"city": "Ankeborg",
+	"telephoneCountryCode": "123",
+	"telephone": "235123432"
+}
+
+
+### Get custosmer
+GET http://localhost:5000/api/customer/1
+
+### Update custosmer
+PUT http://localhost:5000/api/customer/1
+Content-Type: application/json
+
+{
+	"name": "Gustaf",
+	"city": "Vasa",
+	"telephoneCountryCode": "001",
+	"telephone": "6798 8320890 023"
+}
+
+### List customers
+GET http://localhost:5000/api/customer

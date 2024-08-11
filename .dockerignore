@@ -1,0 +1,6 @@
+.gitignore
+.dockerignore
+*.sqlite
+Dockerfile
+README.md
+calls.rest
