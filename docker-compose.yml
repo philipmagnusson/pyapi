@@ -4,8 +4,8 @@ services:
   postgresserver:
     image: postgres
     environment:
-      POSTGRES_PASSWORD: passwd
-      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: hejhopp
+      # POSTGRES_USER: root
       POSTGRES_DB: customerdb
       PGDATA: /var/lib/postgresql/data/pgdata
     ports:
@@ -15,7 +15,7 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready", "-d", "db_prod"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d customerdb"]
       interval: 10s
       timeout: 10s
       retries: 5
