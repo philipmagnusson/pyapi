@@ -5,7 +5,7 @@ class Config:
 	DEBUG = False
 
 class ProdConfig(Config):
-	SQLALCHEMY_DATABASE_URI = 'postgresql://root:passwd@postgresserver/customerdb' #fix me
+	SQLALCHEMY_DATABASE_URI = 'postgresql://root:passwd@postgresserver/customerdb'
 
 class DevConfig(Config):
 	SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'database.sqlite')
