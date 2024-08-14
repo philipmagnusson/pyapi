@@ -24,6 +24,8 @@ python3 -m pip freeze > requirements.txt
 # install from requirements
 python3 -m pip install -r requirements.txt
 
+# run the application
+python3 app.py
 ```
 
 ensure vscode uses the venv
