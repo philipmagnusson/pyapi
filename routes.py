@@ -7,8 +7,13 @@ from app import db
 main = Blueprint('main', __name__)
 
 @main.route('/')
-def index():
+def view_all_customers():
 	return render_template('index.html', customers=get_customer_data())
+
+@main.route('/customer/<int:customer_id>')
+def view_customer(customer_id):
+	customer = Customer.query.get_or_404(customer_id)
+	return render_template('customer_detail.html', customer=customer)
 
 @main.route('/api/customer', methods=["POST"])
 def apiCustomerCreate():

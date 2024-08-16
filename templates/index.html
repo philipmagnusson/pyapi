@@ -5,12 +5,11 @@
 	</head>
 </html>
 <body>
-	<h1>Welcome to the customer page. </h1>
-	Below is a list of all customers (see if keel works)
-	<h2>Keel really works!</h2>
+	<h1>Customers</h1>
+	Below is a list of all customers 
 	<ul>
 			{% for customer in customers %}
-					<li>ID: {{ customer.id }}, Name: {{ customer.name }}</li>
+					<li><a href="{{ url_for('main.view_customer', customer_id=customer.id)}}">{{ customer.name }}</a></li>
 			{% endfor %}
 	</ul>
 </body>
